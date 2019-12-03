@@ -64,7 +64,7 @@
             </li>
           </ul>
           <span class="navbar-text">
-            <a data-toggle="modal" data-target="#loginModal">
+            <a id="loginButton" >
               <span class="fa fa-sign-in"></span>Login
             </a>
           </span>
@@ -77,7 +77,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <h4 class="modal-title">Login</h4>
-            <button type="button" class="close" data-dismiss="modal">
+            <button type="button" class="close" id="xButton">
               &times;
             </button>
             </div>
@@ -102,7 +102,7 @@
                         </div>
                     </div>
                     <div class="form-row">
-                        <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-secondary btn-sm ml-auto" id="cancelButton" >Cancel</button>
                         <button type="submit" class="btn btn-primary btn-sm ml-1">Sign in</button>        
                     </div>
                 </form>
@@ -125,7 +125,7 @@
           <img src="img/logo.png" class="img-fluid" /> 
         </div>
           <div  class="col-12 col-sm">
-            <a type="reserve" data-toggle="modal" data-target="#reserveTable" class="btn btn-block btn-warning">
+            <a type="reserve" class="btn btn-block btn-warning" id="reserveButton">
                 Reserve Table
             </a>
         </div>
@@ -137,7 +137,7 @@
               <div class="modal-content text-dark">
                 <div class="modal-header">
                   <h4 class="modal-title">Reserve a Table</h4>
-                  <button type="button" class="close" data-dismiss="modal">
+                  <button type="button" class="close" id="xReserve">
                     &times;
                   </button>
                   </div>
@@ -211,7 +211,7 @@
                                     <dt class="col-sm-3 mt-3"></dt>
                                     <div class="col-sm-4 mt-3">
                                         <!-- <button class="btn btn-primary mt-4">Reserve</button> -->
-                                        <button type="button" class="btn btn-secondary mt-3  col-12 col-sm-5" data-dismiss="modal">Cancel</button>
+                                        <button type="button" class="btn btn-secondary mt-3  col-12 col-sm-5" id="cancelReserve">Cancel</button>
                                         <button type="button" class="btn btn-primary mt-3 col-12 col-sm-5">Reserve</button>
   
                                       </div></dl>
@@ -561,7 +561,7 @@
       $('[data-toggle="tooltip"]').tooltip ();
     });
     </script> -->
-    <script class="async">
+    <script>
         jQuery.noConflict();
         jQuery(document).ready(function(){
             jQuery("#mycarousel").carousel( { interval: 2000 } );
@@ -579,6 +579,51 @@
             });
             
         });
+    </script>
+    <script>
+    jQuery.noConflict(); 
+    jQuery(document).ready(function (){
+        jQuery('#loginButton').click(function(){
+            jQuery('#loginModal').modal('show')
+ 
+        })
+    
+    });
+    jQuery(document).ready(function (){
+        jQuery('#cancelButton').click(function(){
+            jQuery('#loginModal').modal('hide')
+ 
+        })
+    
+    });
+    jQuery(document).ready(function (){
+        jQuery('#xButton').click(function(){
+            jQuery('#loginModal').modal('hide')
+ 
+        })
+    
+    });
+    jQuery(document).ready(function (){
+        jQuery('#reserveButton').click(function(){
+            jQuery('#reserveTable').modal('show')
+ 
+        })
+    
+    });
+    jQuery(document).ready(function (){
+        jQuery('#cancelReserve').click(function(){
+            jQuery('#reserveTable').modal('hide')
+ 
+        })
+    
+    });
+    jQuery(document).ready(function (){
+        jQuery('#xReserve').click(function(){
+            jQuery('#reserveTable').modal('hide')
+ 
+        })
+    
+    });
     </script>
   
   </body>
